@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+</head>
+
+<body>
+    <nav>
+        <div class=" row container-fluid bg-light">
+            <div class="container  col-4">
+                <a class="navbar-brand" href="#">
+                  <img src="./image 24 task/022.png" alt="" width="100" height="84">
+                </a>
+              </div>
+
+            <div class="col-5 ">
+              <h1>Budget Calculator</h1>
+            </div>
+            
+            <div class="col-3 ">
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+      <div id="main" class="container-fluid row border border-5 bg-dar">
+        <div id="main-inner1" class="container col-6 border border-2 bg-primar">
+          <div class="mt-4"><h2 >Personal Details</h2></div>
+          <form action="">
+            <div class=" group  col-12 mt-5">      
+              <input  type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="label1">Name</label>
+            </div>
+
+            <div class=" group  col-12">      
+              <input type="number" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="label1">Age</label>
+            </div>
+
+            <div class=" group  col-12">      
+              <input type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="label1">City</label>
+            </div>
+
+            <div class=" group  col-12">      
+              <input type="text" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="label1">Job</label>
+            </div>
+
+            <!-- <div class=" group  col-12 bg-dark" >      
+              <input type="checkbox" required name="ABC">
+              <label for="ABC">Unmarried</label>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <input type="checkbox" required name="ASD">
+              <label for="ASD">Married</label>
+              
+            </div> -->
+          <!-- </center> -->
+          </form>
+        </div>
+
+
+        <div id="main-inner2" class="container col-6 border border-2 bg-warnin">
+          <div class="mt-4"><h2>Monthly Incomes</h2></div>
+          <form action="">
+          <div class=" group  col-12 mt-5">      
+            <input id="month" type="number" required onchange="salary()">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="label1">Monthly Salary</label>
+          </div>
+
+          
+
+          <div class=" group  col-12">      
+            <input id="stock" type="number" required onchange="salary1()">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="label1">Stock Market Income</label>
+          </div>
+
+          <div class=" group  col-12">      
+            <input id="interest" type="number" required onchange="salary2()">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="label1">Bank Interest & Other Incomes </label>
+          </div> 
+
+          
+
+          
+<br>
+          <div class="row">
+            <div class="col-6">
+
+              <button type="button" class="btn btn-info" onclick="add()">Total Monthly Income</button>             
+              <!-- <label for="" > Total Monthly Income</label>
+              <input  type="button"  onclick="add(income,income1,income2)"> -->
+              
+              <div class="budget_amount"><span class="currency-symbol">₹ </span><span id="total" class="rupee">0</span></div>
+              
+            </div>
+
+            <div class="col-6">
+              <button type="button" class="btn btn-info" >Average Annual Income</button>
+              <!-- <div id="total2"></div> -->
+              <div class="budget_amount"><span class="currency-symbol">₹ </span><span id="total2" class="rupee">0</span></div>
+
+             
+
+              <!-- <label for="annual">Total Annual Income</label>
+              <input type="text"> -->
+
+            </div>
+           
+          <br><br><br>
+        </form>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div id="page2" class="container-fluid ">
+        <div id="page2-content" class="container-fluid row ">
+            <div id="page2-col" class="container col-9 border border-2 bg-succes">
+              <div class="mb-5"><h2>Monthly Expenses</h2></div>
+
+              <div class="row container">
+
+              
+                <div class="col-5">
+
+                
+                <form>
+                  
+                    <div class=" group  ">      
+                      <input class="groce" id="groce"  type="number" required onchange="out1()" >
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label class="label1">Groceries</label>
+                      <div >
+                        <input class="groce1"  type="range" name="rangeInput" min="100" max="100000" onchange="debit(this.value)">
+                      </div>
+                    </div>
+
+
+                    
+
+
+                    <div class="group">      
+                      <input id="petrol" type="number" required onchange="out2()">
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label class="label1">Petrol & Transportation</label>
+                      <div>
+                        <input type="range" min="100" max="50000" onchange="debit1(this.value)">
+                      </div>
+                    </div>
+
+                    <div class="group">      
+                      <input id="electric" type="number" required onchange="out3()">
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label class="label1">Electricity & Water</label>
+                      <div>
+                        <input type="range" min="100" max="20000" onchange="debit2(this.value)">
+                      </div>
+                    </div>
+
+                  </div>
+<!-- ////// -->
+                    <!-- <div id="other-exp" class="border border-2 col-5">
+ 
+                      
+            <label class="left-head-1" for="expense">Other Expenses</label>
+            <input class="expense_title" id="expense_title" type="text" placeholder="eg-pertrol,food">
+            <br>
+            
+            <label for="expense-amount" class="left-head-1">Expense Amount</label>
+            <input  class="expense-amount" id="expense_amount" type="number" placeholder="amount"><br>
+            <button onclick="addExpense()" id="expense-btn">Add Expense</button>
+            
+
+
+                      <div id="expense_list">   
+                        <table>
+                            <thead >
+                                <tr>
+                                    <th style="border: 2px solid black;">Expenses</th>
+                                    <th style="border: 2px solid black;">Expense Amount</th>
+                                    <th style="border: 2px solid black;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_exp"> -->
+                                <!-- <tr>
+                                    <td style="border: 2px solid black;"></td>
+                                    <td style="border: 2px solid black;"></td>
+                                    <td style="border: 2px solid black;"></td>
+                                </tr> -->
+                                
+        
+                            <!-- </tbody>
+                        </table> 
+                        </div>
+
+
+
+                    </div> -->
+
+                    
+                  </div>
+                  
+                  <!-- ////////////////////////////////////////////////// -->
+
+                    <div class="row mb-5">
+                      <div class="col-6">
+                        <button type="button" class="btn btn-primary" onclick="expense()">Total Expenses</button>
+                        <!-- <div id="total-exp"></div> -->
+                        <div class="budget_amount"><span class="currency-symbol">₹ </span><span id="total-exp" class="rupee">0</span></div>
+
+                        <!-- <label for="">Total Annual Expenses</label>
+                        <input type="number" onclick="annual(Number)"> -->
+                      </div>
+
+                      <div class="col-6">
+                        <!-- <h5>Total Balance</h5> -->
+                        <button type="button" class="btn btn-primary" onclick="Balance()">Monthly Savings / Balance</button>
+                        <!-- <div id="savings"></div> -->
+                        <div class="budget_amount"><span class="currency-symbol">₹ </span><span id="savings" class="rupee">0</span></div>
+
+                        <!-- <label for="">Savings / Balance</label>
+                        <input type="number"> -->
+                      </div>
+                    </div>
+
+                   
+                    
+                  </form>
+                      
+                
+            </div>
+
+            <!-- <div class="container col-7 bg-dark"></div> -->
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
